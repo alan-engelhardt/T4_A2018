@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>form</title>
+	</head>
+
+	<body>
+		<form action="" method="post" autocomplete="on" id="signupForm">
+			<label>Email:
+				<input type="email" name="email" required>
+			</label>
+			<label>
+				Password:
+				<input type="password" name="password" required>
+			</label>
+			<label>
+				Password (again):
+				<input type="password" name="passwordAgain" required>
+			</label>
+			<input type="submit" name="submit" value="Send Me">
+		</form>
+		<script>
+			const form = document.querySelector("#signupForm");
+			const submit = document.querySelector("input[type=submit]");
+			const urlParams = new URLSearchParams(window.location.search);
+
+			submit.addEventListener("click", handleForm);
+
+			function handleForm(e){
+				e.preventDefault();
+				console.log(form.elements.email.value)
+				console.log(form.elements.passwordAgain.value)
+				console.log(form.elements.password.value)
+			}
+		</script>
+	</body>
+
+</html>

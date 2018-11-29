@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>aniform</title>
+		<style>
+			body{
+				font-family: monospace;
+				padding: 2em;
+			}
+
+			form{
+				position: relative;
+			}
+
+			input{
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				top: 0;
+				left: 0;
+				width: 17.5rem;
+				height: 2rem;
+				border: solid 1px;
+				border-radius: .5rem;
+			}
+
+			input[type=email]{
+				padding-left: .5rem;
+				padding-right: .5rem;
+			}
+
+			input[type=submit]{
+				width: 5rem;
+				left: 13.6rem;
+				height: 2.1rem;
+				background-color: orange;
+				text-align: center;
+				line-height: 2rem;
+				cursor: pointer;
+				transition: .5s ease-in;
+			}
+
+			input:focus{
+				outline: 0;
+			}
+		</style>
+	</head>
+	<body>
+	<h2>Please sign up</h2>
+		<form action="action.php">
+			<input type="email" placeholder="Enter email" name="email" required>
+			<input type="submit" value="Sign up">
+		</form>
+		<script>
+			const form = document.querySelector("form")
+			const email = document.querySelector("input[type=email]")
+			const butten = document.querySelector("input[type=submit]")
+
+			butten.addEventListener("click", event=>{
+				event.preventDefault()
+				event.target.style.left=0
+				setTimeout(event=>{
+					butten.value="Sweet..."
+					butten.style.backgroundColor="greenyellow"
+					email.value="Check your mail :-)"
+					email.style.textAlign="center"
+				}, 500)
+			})
+		</script>
+	</body>
+</html>

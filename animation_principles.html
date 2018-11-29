@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ani</title>
+	<style>
+		div{
+			left: 0;
+			position: relative;
+			margin: 1em 4em;
+			width: 100px;
+			height: 100px;
+			background-color: orangered;
+			color: white;
+			text-align: center;
+			line-height: 100px;
+			transition: .7s;
+			border-radius: 50%;
+		}
+
+		#box0{
+			transition-timing-function: linear;
+		}
+
+		#box1{
+/*			animation-timing-function: cubic-bezier(.39,-0.5,1,.94);*/
+		}
+
+		#box2{
+			transition-timing-function: cubic-bezier(.39,-0.8,1,.94);
+		}
+
+		#box3{
+			transition-timing-function: ease;
+		}
+
+		.move0, .move2, .move3{
+			left: 50vw;
+		}
+
+		.move1{
+			animation: move 1s forwards;
+		}
+
+		@keyframes move{
+			10%{
+				transform: scale(.5)
+			}
+			30%{
+				transform: scale(1.5)
+			}
+			50%{
+				transform: scale(1)
+			}
+			100%{
+				left: 50vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="box0">Linear</div>
+	<div id="box1">Squash/Stretch</div>
+	<div id="box2">Antisipate</div>
+	<div id="box3">Slow in/out</div>
+	<script>
+		const boxes = document.querySelectorAll("div")
+		boxes.forEach((box, i)=>box.addEventListener("click", e=>e.target.classList.toggle("move"+i)))
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>t</title>
+		<style>
+			form{
+				margin: 1em;
+				width: 14em;
+			}
+			input, select, textarea{
+				display: block;
+				margin-bottom: 1em;
+				margin-top: .1em;
+			}
+			input[type=submit], input[type=reset]{
+				display: inline;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>fieldset/legend</legend>
+				checkbox<input type="checkbox">
+				color<input type="color">
+				date<input type="date">
+				datetime-local<input type="datetime-local">
+				number<input type="number">
+				radio<input type="radio">
+				search<input type="search">
+			</fieldset>
+			<fieldset>
+				text<input type="text">
+				<legend>fieldset/legend</legend>
+				textarea
+				<textarea></textarea>
+				time<input type="time">
+				url<input type="url">
+				week<input type="week">
+				select/option<select>
+				<option value="volvo">option 1</option>
+				<option value="saab">Saab</option>
+				<option value="opel">Opel</option>
+				<option value="audi">Audi</option>
+				</select>
+				<input type="submit">
+				<input type="reset">
+			</fieldset>
+		</form>
+	</body>
+</html>
