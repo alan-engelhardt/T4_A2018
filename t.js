@@ -4,24 +4,23 @@ let cnt = 0
 
 function addFlake(){
 	const clone = svg.cloneNode(true)
-	const flake = clone.querySelector(".star")
+	const flake = clone.querySelector(".flake")
 	const randomX = Math.random()*100
 	const randomD = Math.random()+1
 	const randomS = Math.random()
-
-	flake.style.transform = "rotate("+Math.random()*359+"deg)"
+	//flake.style.transform = "scale("+randomS+")"
 	flake.style.left = randomX+"%"
-	flake.style.top = 0
+	flake.style.top = "-5px"
 	let l=0
 	let intv = setInterval(function(){
 		l++
-		flake.style.top = randomD*l/10 + "%"
-		flake.style.transform = "rotate("+l*5+"deg) scale("+randomS+")"
+		flake.id="f"+l
+		//flake.style.top = randomD*l/10 + "%"
+		flake.style.transform = "translateY("+randomD*l/10+"vh) scale("+randomS+")"
 		bg.appendChild(clone)
-		if(randomD*l >= 1000){
+		if(l >= 900){
 			clearInterval(intv)
-			console.log(bg.lastChild)
-			bg.removeChild(bg.lastChild)
+			flake.remove()
 		}
 	}, 10)
 	}
@@ -30,6 +29,6 @@ let snowIntv = setInterval(function(){
 	cnt++
 	addFlake();
 	if(cnt>500){
-	   clearInterval(snowIntv)
-	   }
-}, 10)
+		clearInterval(snowIntv)
+	}
+}, 50)
